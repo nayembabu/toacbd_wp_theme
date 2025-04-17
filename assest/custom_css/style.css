@@ -1,0 +1,339 @@
+:root {
+    --primary-color: #E4993D;
+    --secondary-color: #00A2DE;
+    --text-color: #5a5a5a;
+    --white-color: #fff;
+    --black-color: #000;
+    --blue-color: #0D6EFD;
+    --yellow-color: #ffc107;
+    --light-gray-color: #d7d7d7;
+    --gray-color: #999;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --highlight-color: #00A2DE;
+    --accent-color: #DB9034;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+a.nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.topHeader {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 0;
+}
+.topLetastNews{
+    display: flex;
+}
+.topLetastNewsLeft p {
+    margin: 0;
+    font-weight: bold;
+}
+.topRegestrationLinks a {
+    margin-left: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+.topRegestrationLinks a:hover {
+    text-decoration: underline;
+}
+.topsocialLinksLeft{
+    display: flex;
+    justify-content: center;
+}
+.topsocialLinksLeft a {
+    margin-right: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+.title h3 {
+    position: relative;
+    line-height: 2;
+    border-bottom: 1px solid var(--light-gray-color);
+    color: var(--text-color);
+    font-weight: 600;
+}
+.title h3:after {
+    background-color: var(--secondary-color);
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 220px;
+}
+.fullTitle h3{
+    position: relative;
+    line-height: 2;
+    color: var(--text-color);
+    font-weight: 600;
+    padding-left: 15px;
+}
+.fullTitle h3:after {
+    background-color: var(--secondary-color);
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.blogTab .nav-item .nav-link{
+    margin: 5px 5px;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+	color: var(--black-color) !important;
+    background-color: var(--blue-color) !important;
+    border-color: var(--blue-color) !important;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.blogTab .nav-item .active{
+    margin: 5px 5px;
+	padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+	color: var(--black-color) !important;
+    background-color: var(--yellow-color) !important;
+    border-color: var(--yellow-color) !important;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.tab-content>.active {
+    margin-top: 2%;
+    display: block;
+    border: none;
+}
+.nav-tabs {
+    border-bottom: none !important;
+}
+.blogTabContent {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.blogTabContent .news {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.blogTabContent .news h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.blogTabContent .news img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 5px;
+    width: 120px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.blogTabContent .news p {
+    margin-top: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.news .meta-group{
+    font-size: 13px;
+    color: var(--gray-color);
+}
+.news .meta-group i{
+    margin-right: 8px;
+}
+.updateHm{
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.updateBlogList{
+    height: 200px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+.aboutTitle h3{
+    line-height: 0.5;
+    text-transform: uppercase;
+    color: var(--highlight-color);
+}
+.aboutTitle h6{
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+.associatesTitle h3{
+    color: var(--highlight-color);
+}
+.associatesImg img{
+    margin: 0.4%;
+}
+.footerSec1{
+    position: relative;
+}
+.FooterTopImg{
+    position: relative;
+    padding: 50px 0 0;
+    background: url(../img/footer-image.png) center bottom;
+    background-size: contain;
+}
+.footerSec2 {
+    background-color: #00a2de;
+    z-index: 99;
+    background-image: url(../img/overlay.png);
+    padding: 30px 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+.footerMenuContent ul {
+    list-style: none;
+    margin-left: -10%;
+}
+.footerMenuContent ul li{
+    border: var(--border-color) solid;
+    padding: 1% 0;
+    border-width: 0 0 0.5px 0;
+}
+.footerMenuContent ul li a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+.footerSec3{
+    background-color: #008abd;
+    background-image: url(../img/overlay.png);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+.custom-logo {
+    width: 150px;
+    height: auto;
+}
+
+
+  
+
+
+
+
+
+/* ইউজারের প্রোফাইল ছবি স্টাইলিং */
+.user-avatar {
+    border: 3px solid #007bff; /* ছবি চারপাশে একটি নীল বর্ডার */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* সুন্দর অ্যানিমেশন */
+}
+
+.user-avatar:hover {
+    transform: scale(1.1); /* হোভার করলে ছবি একটু বড় হবে */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ছবি হোভার করলে একটি ছোট ছায়া */
+}
+
+/* ইউজার নামের স্টাইলিং */
+.user-info span {
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.user-info:hover span {
+    color: #007bff; /* হোভার করলে নামের রঙ পরিবর্তিত হবে */
+}
+
+/* ড্রপডাউন বাটন */
+.dropdown-toggle {
+    font-size: 18px;
+    color: #333;
+    border: none;
+    padding: 0;
+}
+
+.dropdown-toggle:hover {
+    color: #007bff;
+}
+
+/* ড্রপডাউন মেনুর স্টাইল */
+.dropdown-menu {
+    border-radius: 8px; /* মেনুর কোণাগুলো গোলাকার */
+    background-color: #f9f9f9;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black !important; /* ড্রপডাউন আইটেমের রঙ */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* LOGIN বাটনের স্টাইল */
+.btn-primary {
+    background-color: #007bff;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* হোভার করলে ব্যাকগ্রাউন্ড পরিবর্তন হবে */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
