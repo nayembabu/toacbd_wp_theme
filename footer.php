@@ -55,8 +55,9 @@
                 </div>
             </section>
         </footer>
-        <script src="<?php echo get_template_directory_uri(); ?>/assest/custom_js/script.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/assest/bt/js/bootstrap.bundle.min.js" ></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/assest/custom_js/swiper-bundle.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/assest/custom_js/script.js"></script>
 
 
         <script>
@@ -77,6 +78,32 @@
                     reader.readAsDataURL(this.files[0]);
                 });
             });
+            
+            
+const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      }
+    }
+  }); 
+
+
+
+
         </script>
 
 

@@ -10,16 +10,13 @@ if (current_user_can('editor')) {
         $post_title = sanitize_text_field($_POST['post_title']);
         $post_content = sanitize_textarea_field($_POST['post_content']);
         $category = intval($_POST['category']); // ক্যাটাগরি সিলেক্ট করুন
-        $post_image = $_FILES['post_image']; // ছবি আপলোড
+        $post_image = $_FILES['post_image']; // ছবি আপলোড 
 
-        // ছবির আপলোড সিস্টেম
-        require_once(ABSPATH . 'wp-admin/includes/file.php');
-        $upload = wp_handle_upload($post_image, array('test_form' => false));
         
         if (isset($upload['url'])) {
             $image_url = $upload['url'];
         } else {
-            $image_url = '';
+            $image_url = '';   
         }
 
         // নতুন পোস্ট তৈরি করুন
@@ -37,7 +34,36 @@ if (current_user_can('editor')) {
         
         // পোস্ট ইনসার্ট করুন
         $post_id = wp_insert_post($new_post);
-        
+
+        // WordPress media uploader
+        require_once(ABSPATH . 'wp-admin/includes/file.php');
+        require_once(ABSPATH . 'wp-admin/includes/media.php');
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+
+        // $upload = wp_handle_upload($post_image, array('test_form' => false));
+
+        $upload_dir = wp_upload_dir();
+        $upload_path = $upload_dir['path'] . '/' . basename($post_image['name']);
+        $upload_url = $upload_dir['url'] . '/' . basename($post_image['name']);
+        move_uploaded_file($post_image['tmp_name'], $upload_path);
+        $attachment = array(
+            'guid'           => $upload_url, 
+            'post_mime_type' => $post_image['type'],
+            'post_title'     => sanitize_file_name($post_image['name']),
+            'post_content'   => '',
+            'post_status'    => 'inherit'
+        );
+        $attachment_id = media_handle_upload('post_image', $post_id); 
+        $attachment_id = wp_insert_attachment($attachment, $upload_path);
+
+
+        if (is_wp_error($attachment_id)) {
+            echo '<div class="alert alert-danger" role="alert">ছবি আপলোড হয় নাই। </div>';
+        } else {
+            set_post_thumbnail($post_id, $attachment_id);
+        }
+
         if ($post_id) {
             echo '<div class="alert alert-success" role="alert">পোস্ট সফলভাবে সাবমিট হয়েছে এবং মডারেশনের জন্য পাঠানো হয়েছে।</div>';
         }
@@ -48,7 +74,7 @@ if (current_user_can('editor')) {
         <h2 class="text-center mb-4">নতুন পোস্ট সাবমিট করুন</h2>
         <div class="card shadow-lg">
             <div class="card-body">
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" >
 
                 
 

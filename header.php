@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assest/bt/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assest/custom_css/style.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assest/custom_css/responsive.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assest/custom_css/swiper-bundle.min.css">
         <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assest/img/TOAC.png" type="image/x-icon">
         <script src="<?php echo get_template_directory_uri(); ?>/assest/custom_js/jq3.js"></script>
         <?php wp_head(); ?>
