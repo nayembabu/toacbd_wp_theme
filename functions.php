@@ -152,6 +152,39 @@
     add_theme_support('post-thumbnails'); // Featured image support
     add_image_size('medium', 300, 300, true); // Medium size image, 300px by 300px
 
+    // Custom Post Type for Gallery (Photos & Videos)
+    function toacbd_gallery_post_type() {
+        $labels = array(
+            'name'               => 'Gallery',
+            'singular_name'      => 'Gallery Item',
+            'menu_name'          => 'Toacbd Gallery',
+            'name_admin_bar'     => 'Gallery Item',
+            'add_new'            => 'Add New',
+            'add_new_item'       => 'Add New Gallery Item',
+            'new_item'           => 'New Gallery Item',
+            'edit_item'          => 'Edit Gallery Item',
+            'view_item'          => 'View Gallery Item',
+            'all_items'          => 'All Gallery Items',
+            'search_items'       => 'Search Gallery Items',
+            'not_found'          => 'No gallery items found.',
+            'not_found_in_trash' => 'No gallery items found in Trash.',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Gallery Items'
+        );
+        
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'has_archive'        => true,
+            'rewrite'            => array('slug' => 'gallery'),
+            'show_in_rest'       => true, // Enable Gutenberg editor
+            'supports'           => array('title', 'editor', 'thumbnail'),
+            'show_in_menu'       => true
+        );
+
+        register_post_type('gallery_item', $args);
+    }
+    add_action('init', 'toacbd_gallery_post_type');
 
     
 

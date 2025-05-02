@@ -354,6 +354,67 @@ a.nav-link {
 
 
 
+body {
+    background: #f1f3f6;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  .filter-btns {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .filter-btns .btn {
+    margin: 0 5px;
+    border-radius: 30px;
+    padding: 8px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  
+  .gallery-item {
+    transition: 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
+  .gallery-item img, .gallery-item iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .modal-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .hide {
+    display: none !important;
+  }
+  
+  /* ইউনিক ডিজাইন ক্লাস */
+  .photo-1 img { border: 3px solid #0d6efd; }
+  .photo-2 img { filter: grayscale(100%); }
+  .photo-3 img { border-radius: 30px 0 30px 0; }
+  
+  .video-1 iframe { border: 3px solid #dc3545; border-radius: 10px; }
+  .video-2 iframe { filter: brightness(0.9); border: 2px dashed #198754; }
+
+  
 
 
 
