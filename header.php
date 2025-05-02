@@ -23,9 +23,30 @@
             <div class="topHeader w-100 d-flex flex-wrap">
                 <div class="row container mx-auto">
                     <div class="col-12 col-md-4 topLetastNews text-center text-md-start d-none d-md-flex">
-                        <div class="topLetastNewsLeft"><p>Latest News:</p></div>
+                        <div class="topLetastNewsLeft" style="margin-top: 10px; " ><p>Latest News:</p></div>
                         <div class="topLetastNewsRight">
-                            <div class="news-ticker">New blog post available!</div>
+                            <?php
+                                $args = [
+                                    'post_type'      => 'post',
+                                    'posts_per_page' => -1, // সব পোস্ট আনবে
+                                    'orderby'        => 'date',
+                                    'order'          => 'DESC',
+                                    'category_name'  => 'Blog', // ক্যাটাগরি 'Blog' এর পোস্টগুলো দেখাবে
+                                ];
+
+                                $query = new WP_Query($args); 
+
+                                if ($query->have_posts()) : 
+                                    while ($query->have_posts()) : $query->the_post();
+                            ?>
+                                <div class="news-ticker"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                            <?php
+                                endwhile;
+                                wp_reset_postdata();
+                                else :
+                                    echo '<p>কোনো পোস্ট পাওয়া যায়নি।</p>';
+                                endif;
+                            ?>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 topsocialLinks text-center">

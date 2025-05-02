@@ -43,7 +43,7 @@
                                 'order'   => 'ASC',
                                 'hide_empty' => true // true রাখলে যেসব ক্যাটাগরিতে পোস্ট নেই সেগুলো দেখাবে না
                             ]);
-
+                            
                             foreach ($categories as $category) {
                                 echo '<li class="nav-item" role="presentation">
                                         <button class="nav-link " id="'.esc_html($category->name).'-tab" data-bs-toggle="tab" data-bs-target="#'.esc_html($category->name).'-tab-pane" type="button" role="tab" aria-controls="'.esc_html($category->name).'-tab-pane" aria-selected="true">'.esc_html($category->name).'</button>
@@ -65,67 +65,86 @@
                             $query = new WP_Query($args);
 
                             if ($query->have_posts()) :
-                                while ($query->have_posts()) : $query->the_post(); ?>
+
+                                $previous_category = ''; // আগের পোস্টের ক্যাটাগরি স্টোর করার জন্য ভেরিয়েবল
+                                $first_post = true; // প্রথম পোস্ট চিহ্নিত করার জন্য ভেরিয়েবল 
+
+                                while ($query->have_posts()) : $query->the_post(); 
+
+                                    $categories = get_the_category();
+                                    $current_category = $categories[0]->name; 
+
+                                    if ($current_category == $previous_category) {  
+                                ?>
                                 
-                                    <div class="post-item">
-                                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                        <small><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></small>
+                                    <div class="<?php echo $current_category; ?> clearfix text-justify">
+                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                            <span class="meta-group mb-2">
+                                                <div class="calendar">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i><?php echo get_the_date(); ?>
+                                                </div>
+                                            </span>
+                                        </h4>
                                         
                                         <?php if (has_post_thumbnail()) : ?>
-                                            <div class="post-thumb"><?php the_post_thumbnail('medium'); ?></div>
+                                            <div class="post-thumb"><?php the_post_thumbnail('custom-size', ['width' => 120, 'height' => 175]); ?></div>
                                         <?php endif; ?>
-                                        
                                         <p><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
-                                        <hr>
                                     </div>
+                                <?php }else { 
+                                    if ($first_post) { ?>
+                                        <div class="<?php echo $current_category; ?>TabContent tab-pane fade show active" id="<?php echo $current_category; ?>-tab-pane" role="tabpanel" aria-labelledby="<?php echo $current_category; ?>-tab" tabindex="0">
+                                            <div class="tabContent">
+                                                <div class="<?php echo $current_category; ?> clearfix text-justify">
+                                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                        <span class="meta-group mb-2">
+                                                            <div class="calendar">
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i><?php echo get_the_date(); ?>
+                                                            </div>
+                                                        </span>
+                                                    </h4>
+                                                            
+                                                    <?php if (has_post_thumbnail()) : ?>
+                                                        <div class="post-thumb"><?php the_post_thumbnail('custom-size', ['width' => 120, 'height' => 175]); ?></div>
+                                                    <?php endif; ?>
+                                                    <p><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
+                                                </div>
+                                        
+                                    <?php $first_post = false; } else { ?>
 
-                                <?php endwhile;
+                                            </div>
+                                        </div>
+                                        <div class="<?php echo $current_category; ?>TabContent tab-pane fade show " id="<?php echo $current_category; ?>-tab-pane" role="tabpanel" aria-labelledby="<?php echo $current_category; ?>-tab" tabindex="0">
+                                            <div class="tabContent">
+                                                <div class="<?php echo $current_category; ?> clearfix text-justify">
+                                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                        <span class="meta-group mb-2">
+                                                            <div class="calendar">
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i><?php echo get_the_date(); ?>
+                                                            </div>
+                                                        </span>
+                                                    </h4>
+                                                            
+                                                    <?php if (has_post_thumbnail()) : ?>
+                                                        <div class="post-thumb"><?php the_post_thumbnail('custom-size', ['width' => 120, 'height' => 175]); ?></div>
+                                                    <?php endif; ?>
+                                                    <p><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
+                                                </div>
+                                <?php } } ?>
+
+                                <?php 
+                                    $previous_category = $current_category;
+                                endwhile;
                                 wp_reset_postdata();
                             else :
-                                echo '<p>কোনো পোস্ট পাওয়া যায়নি।</p>';
+                                echo '<div class="text-center p-5 border rounded shadow">
+                                        <h2>কোনো  পোস্ট পাওয়া যায়নি।</h2>
+                                      </div>';
                             endif;
                         ?>
 
-
-                        <div class="blogTabContent tab-pane fade show active" id="News-tab-pane" role="tabpanel" aria-labelledby="News-tab" tabindex="0">
-                            <div class="tabContent">
-                                <div class="news clearfix text-justify">
-                                    <h4><a href="https://natta.org.np/news_event/natta-celebrates-60th-anniversary/">NATTA Celebrates 60th Anniversary</a>
-                                        <span class="meta-group mb-2">
-                                            <div class="calendar">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>March 11, 2025
-                                            </div>
-                                        </span>
-                                    </h4>
-                                    <img src="https://natta.org.np//wp-content/uploads/2025/03/OPS_9363-120x75.jpg" alt="" width="120" height="175">
-                                    <p>The Nepal Association of Tour and Travel Agents (NATTA) marked its Diamond Jubilee with a grand ceremony on 27th Falgun 2081 at Hotel Manaslu, Kathmandu. The event was inaugurated by...</p>
-                                </div>
-                                <div class="news clearfix text-justify">
-                                    <h4><a href="https://natta.org.np/news_event/strengthening-cross-border-tourism-natta-hosts-meeting-with-ehttoa-and-ntb/">Strengthening Cross-Border Tourism: NATTA Hosts Meeting with EHTTOA and NTB</a>
-                                        <span class="meta-group">
-                                            <div class="calendar">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>March 2, 2025
-                                            </div>
-                                        </span>
-                                    </h4>
-                                    <img src="https://natta.org.np//wp-content/uploads/2025/03/IMG_9202-120x75.jpg" alt="" width="120" height="175">
-                                    <p>Under the leadership of NATTA President Mr. Kumar Mani Thapaliya and other board members, NATTA hosted a meeting with the Eastern Himalayan Tours and Travels Operators Association (EHTTOA) delegation, accompanied...</p>
-                                </div>
-                                <div class="news clearfix text-justify">
-                                    <h4><a href="https://natta.org.np/news_event/natta-past-president-council/">NATTA Past President Council</a>
-                                        <span class="meta-group">
-                                            <div class="calendar">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>February 10, 2025
-                                            </div>
-                                        </span>
-                                    </h4>
-                                    <img src="https://natta.org.np//wp-content/uploads/2025/02/WhatsApp-Image-2025-02-12-at-11.10.40-3-120x75.jpeg" alt="" width="120" height="175">
-                                    <p>The NATTA Past President Council (PPC) meeting was held on Sunday afternoon at the NATTA Secretariat under the chairmanship of the existing NATTA PPC Convener, Mr. R. M. Singh Pradhan....</p>
-                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="Events-tab-pane" role="tabpanel" aria-labelledby="Events-tab" tabindex="0">Event Tab</div>
-                        <div class="tab-pane fade" id="Activities-tab-pane" role="tabpanel" aria-labelledby="Activities-tab" tabindex="0">Activities Tab</div>
                     </div>
                 </div>
                 <div class="col-6 pl-2">

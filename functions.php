@@ -244,7 +244,10 @@ function pending_posts_widget_function() {
         echo '</tbody>';
         echo '</table>';
     } else {
-        echo '<p>No pending posts.</p>';
+        echo '<div class="text-center p-5 border rounded shadow">
+                <h1>কোনো পেন্ডিং পোস্ট পাওয়া যায়নি।</h1>
+                <p class="mt-3">দয়া করে পোস্ট করুন। </p>
+              </div>';
     }
     echo '</div>';
     echo '</div>';
@@ -420,6 +423,9 @@ function handle_approve_post_action() {
         }
     }
 }
+
+add_image_size('custom-size', 120, 175, true); // 120px x 175px এবং cropped (true) হবে
+
 
 
 

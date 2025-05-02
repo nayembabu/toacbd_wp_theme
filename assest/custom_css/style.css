@@ -315,6 +315,42 @@ a.nav-link {
 .btn-primary:hover {
     background-color: #0056b3; /* হোভার করলে ব্যাকগ্রাউন্ড পরিবর্তন হবে */
 }
+.topLetastNewsRight {
+    width: 100%;
+    height: 50px; /* আপনার পছন্দ অনুযায়ী হাইট দিন */
+    overflow: hidden; /* স্লাইডিং ইফেক্ট প্রদর্শন করতে overflow হাইড করা হবে */
+    position: relative;
+    padding: 5px; /* প্রয়োজনীয় প্যাডিং */
+    display: flex;
+    align-items: center; /* সেন্টার করার জন্য */
+}
+.news-ticker {
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 50px; /* টেক্সট ভেতরে কেন্দ্রিত রাখার জন্য */
+    color: white; /* টেক্সট রঙ */
+    font-size: 16px;
+    padding: 0 20px;
+    position: relative; /* সঠিকভাবে পজিশনিং */
+    animation: slide-left 10s linear infinite;
+}
+@keyframes slide-left {
+    0% {
+        right: -100%; /* ডান দিক থেকে শুরু */
+    }
+    100% {
+        right: 100%; /* বাম দিক দিয়ে চলে যাবে */
+    }
+}
+.news-ticker:hover {
+    animation-play-state: paused; /* হোভার করলে এনিমেশন থামবে */ 
+}
+.news-ticker a {
+    color: #ffffff; /* লিঙ্কের রঙ */
+    text-decoration: none; /* আন্ডারলাইন বাদ দিন */
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
 
 
 
