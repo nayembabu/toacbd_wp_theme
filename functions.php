@@ -186,7 +186,37 @@
     }
     add_action('init', 'toacbd_gallery_post_type');
 
+    function toacbd_register_theme_services_cpt() {
+        $labels = array(
+            'name'               => 'Theme Services',
+            'singular_name'      => 'Theme Service',
+            'menu_name'          => 'All Services',
+            'name_admin_bar'     => 'Theme Service',
+            'add_new'            => 'Add New',
+            'add_new_item'       => 'New Service',
+            'new_item'           => 'New Theme Service',
+            'edit_item'          => 'Edit Theme Service',
+            'view_item'          => 'View Theme Service',
+            'all_items'          => 'All Services',
+            'search_items'       => 'Search Theme Services',
+            'not_found'          => 'No theme services found.',
+            'not_found_in_trash' => 'No theme services found in Trash.',
+        );
     
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'menu_icon'          => 'dashicons-art',
+            'supports'           => array('title', 'editor', 'thumbnail'),
+            'has_archive'        => true,
+            'rewrite'            => array('slug' => 'theme-services'),
+            'show_in_rest'       => true,
+        );
+    
+        register_post_type('theme_service', $args);
+    }
+    add_action('init', 'toacbd_register_theme_services_cpt');
+
 
 
 
