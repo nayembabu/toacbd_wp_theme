@@ -194,23 +194,45 @@
                     </div>
                 </div>
             </section>
+            
+            <?php
+                $args = array(
+                'post_type' => 'theme_service',
+                'posts_per_page' => -1,
+                );
+                $services = new WP_Query($args);
+            ?>
+
             <section class="perFooter bg-white pt-2">
-                <div class="associates row container mx-auto my-5">
-                    <div class="col-md-2 associatesTitle d-flex align-items-center justify-content-center">
+                <div class="container my-5">
+                    <div class="row">
+                    <div class="col-md-2 d-flex align-items-center justify-content-center">
                         <h3>ASSOCIATES</h3>
                     </div>
-                    <div class="col-md-10 associatesImg d-flex flex-wrap justify-content-center">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
-                        <img src="https://natta.org.np/wp-content/themes/nata/assets/images/nepalgov.jpg" alt="AssociatesImg1" width="100" height="100">
+                    <div class="col-md-10">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <?php if ($services->have_posts()) : ?>
+                            <?php while ($services->have_posts()) : $services->the_post(); ?>
+                                <?php if (has_post_thumbnail()) : ?>
+                                <div class="swiper-slide d-flex justify-content-center align-items-center">
+                                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid', 'style' => 'max-width: 100px; height: auto;')); ?>
+                                </div>
+                                <?php endif; ?>
+                            <?php endwhile; wp_reset_postdata(); ?>
+                            <?php else : ?>
+                            <p>No Associates found.</p>
+                            <?php endif; ?>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </section>
+            </section> 
+
+
+
         </main>
 
 <?php

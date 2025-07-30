@@ -10,7 +10,7 @@
     .hero {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x600/?team,technology') center/cover no-repeat;
       color: white;
-      padding: 120px 0;
+      padding: 60px 0;
       text-align: center;
     }
     .section-title {
@@ -56,7 +56,7 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <div class="container">
+    <div class="container" >
       <h1 class="display-3 fw-bold">About Us</h1>
       <p class="lead">We are passionate about building digital solutions for the future.</p>
     </div>
@@ -67,8 +67,10 @@
     <div class="container">
       <h2 class="section-title text-center">Who We Are</h2>
       <div class="row justify-content-center">
-        <div class="col-md-10 text-center">
-          <p class="fs-5">Vireta is a cutting-edge software company delivering innovative web, mobile, and AI-driven solutions. Our team is a blend of visionaries and problem-solvers, constantly pushing boundaries to create digital excellence.</p>
+        <div class="col-md-10 ">
+          <p class="fs-5">The Tour Operators Association of Cox’s Bazar (TOAC) is a united platform of licensed and active tour operators dedicated to promoting responsible, sustainable, and inclusive tourism in Cox’s Bazar and its surrounding regions. Formed with a shared vision of uplifting the tourism industry, TOAC serves as the collective voice of tour operators—working collaboratively to raise service standards, ensure visitor satisfaction, and uphold professional integrity.<br>
+          We bring together passionate tourism professionals who are committed to delivering authentic experiences, enhancing community engagement, and protecting the natural and cultural heritage of the region. With a strong emphasis on training, innovation, and cooperation, TOAC works closely with government bodies, local communities, and national and international partners to make Cox’s Bazar a leading global destination. <br>
+          As a non-profit and democratic organization, we operate with transparency, unity, and a firm commitment to the welfare of our members, visitors, and the wider community.</p>
         </div>
       </div>
     </div>
@@ -84,7 +86,7 @@
               <i class="bi bi-bullseye"></i>
             </div>
             <h4>Our Mission</h4>
-            <p>To empower developers and businesses with scalable, innovative, and intuitive software that makes a difference.</p>
+            <p>To unite, empower, and represent all licensed tour operators of Cox’s Bazar in building a responsible, professional, and sustainable tourism industry through collaboration, training, advocacy, and ethical practices; while promoting Cox’s Bazar as a premier destination and ensuring inclusive benefits for members, visitors, and the local community.</p>
           </div>
         </div>
         <div class="col-md-6">
@@ -93,65 +95,18 @@
               <i class="bi bi-eye"></i>
             </div>
             <h4>Our Vision</h4>
-            <p>To become a global leader in intelligent technology solutions that drive the future of digital transformation.</p>
+            <p>To establish Cox’s Bazar as a globally recognized, eco-friendly, and inclusive tourism destination by fostering a united community of professional tour operators committed to sustainable growth, service excellence, and social responsibility.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+<!-- Our Team Slider -->
+<section class="py-5">
+  <div class="container">
 
-  <!-- Our Team Slider -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center">Meet Our Team</h2>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- Team Members -->
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid mb-3" width="120" alt="CEO">
-            <h5 class="fw-semibold">নাতী</h5>
-            <p class="text-muted">Founder & CEO</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" class="img-fluid mb-3" width="120" alt="CTO">
-            <h5 class="fw-semibold">আয়েশা</h5>
-            <p class="text-muted">CTO</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/men/55.jpg" class="img-fluid mb-3" width="120" alt="Dev Lead">
-            <h5 class="fw-semibold">রাকিব</h5>
-            <p class="text-muted">Lead Developer</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="img-fluid mb-3" width="120" alt="Designer">
-            <h5 class="fw-semibold">সানজিদা</h5>
-            <p class="text-muted">UI/UX Designer</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/men/61.jpg" class="img-fluid mb-3" width="120" alt="QA">
-            <h5 class="fw-semibold">জাবেদ</h5>
-            <p class="text-muted">Quality Analyst</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/women/53.jpg" class="img-fluid mb-3" width="120" alt="Marketing">
-            <h5 class="fw-semibold">মুন</h5>
-            <p class="text-muted">Marketing Lead</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/men/77.jpg" class="img-fluid mb-3" width="120" alt="Support">
-            <h5 class="fw-semibold">নয়ন</h5>
-            <p class="text-muted">Support Manager</p>
-          </div>
-          <div class="swiper-slide team-member">
-            <img src="https://randomuser.me/api/portraits/women/40.jpg" class="img-fluid mb-3" width="120" alt="HR">
-            <h5 class="fw-semibold">হৃদি</h5>
-            <p class="text-muted">HR & Admin</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</section>
 
   <?php get_footer(); ?>
 

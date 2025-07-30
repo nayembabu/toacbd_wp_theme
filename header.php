@@ -13,6 +13,18 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assest/custom_css/swiper-bundle.min.css">
         <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assest/img/TOAC.png" type="image/x-icon">
         <script src="<?php echo get_template_directory_uri(); ?>/assest/custom_js/jq3.js"></script>
+        <style>
+            /* Swiper slide spacing & alignment */
+            .mySwiper {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .swiper-slide {
+                width: auto;
+                padding: 10px;
+            }
+        </style>
         <?php wp_head(); ?>
     </head>
     <body>
@@ -51,10 +63,10 @@
                     </div>
                     <div class="col-12 col-md-4 topsocialLinks text-center">
                         <div class="topsocialLinksLeft">
-                            <a href="#"><i class="fab fa-facebook-f" alt="Facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter" alt="Twitter"></i></a>
+                            <a href="https://www.facebook.com/toacorg"><i class="fab fa-facebook-f" alt="Facebook"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter" alt="Twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in" alt="LinkedIn"></i></a>
-                            <a href="#"><i class="fab fa-youtube" alt="YouTube"></i></a>
+                            <a href="#"><i class="fab fa-youtube" alt="YouTube"></i></a> -->
                         </div>
                     </div>
 
@@ -98,15 +110,10 @@
                                 </div>
                                 <?php
                             } else {
-                                echo '<a href="log-in.php" class="btn btn-primary rounded-pill px-4 py-2">MEMBERS LOGIN</a>';
+                                echo '<a href="https://toacbd.com/log-in.php" class="btn btn-primary rounded-pill px-4 py-2">MEMBERS LOGIN</a>';
                             }
                         ?>
 
-
-
-
-
-                        
                     </div>
                 </div>
             </div>

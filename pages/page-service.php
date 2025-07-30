@@ -19,7 +19,7 @@
     }
 
     .toacbd-hero {
-      padding: 100px 20px 70px;
+      padding: 60px 20px 60px;
       background: linear-gradient(145deg, #0039a6, #007bff);
       color: #fff;
       text-align: center;
@@ -113,9 +113,11 @@
   <!-- Services Section -->
   <section class="toacbd-section">
     <div class="container">
-      <div class="toacbd-title">
-        <h2>Our Premium Services</h2>
-      </div>
+      <!-- 
+        <div class="toacbd-title">
+          <h2>Our Premium Services</h2>
+        </div>
+       -->
       <div class="row g-4">
 
 
@@ -138,7 +140,7 @@
             <div class="toacbd-service-card text-center">
               <div class="toacbd-icon">
                   <?php if (has_post_thumbnail()) : ?>
-                      <div class="thumb"><?php the_post_thumbnail('medium', ['class' => 'img-fluid rounded-circle shadow thumbs_imagess']); ?></div>
+                      <div class="thumb"><?php the_post_thumbnail('medium', ['class' => 'img-fluid rounded shadow thumbs_imagess']); ?></div>
                   <?php endif; ?>
               </div>
               <div class="toacbd-service-title"><?php the_title(); ?></div>

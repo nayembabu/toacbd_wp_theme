@@ -8,7 +8,7 @@
 <!-- Gallery Section -->
 <div class="container py-5">
 
-  <h2 class="section-title">📷 Vireta Gallery</h2>
+  <h2 class="section-title">📷 Toacbd Gallery</h2>
 
     <div class="filter-btns mb-4">
         <button class="btn btn-outline-primary active" onclick="filterItems('all')">All</button>

@@ -13,6 +13,20 @@
     --highlight-color: #00A2DE;
     --accent-color: #DB9034;
 }
+.custom-slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* চাইলে */
+}
+.custom-slider {
+    width: 100%;
+    overflow: hidden;
+}
+.banner, .slide {
+    width: 100%;
+    max-width: 100%;
+}
 .navbar-nav {
     margin-left: auto;
 }
